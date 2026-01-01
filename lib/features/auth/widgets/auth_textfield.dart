@@ -7,15 +7,18 @@ class AuthTextField extends StatelessWidget {
   final TextEditingController? controller;
   final bool obscureText;
   final String? Function(String?)? validator;
+  final Widget? suffixIcon;
+
 
   const AuthTextField({
-    Key? key,
+    super.key,
     required this.hintText,
     required this.title,
     this.validator,
     this.controller,
     this.obscureText = false,
-  }) : super(key: key);
+    this.suffixIcon
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -23,15 +26,14 @@ class AuthTextField extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
 
-        Text(title,style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: AppColors.white,fontSize: 18),),
-        const SizedBox(height: 24,),
+        Text(title,style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: AppColors.white,),),
+        const SizedBox(height: 8),
         TextFormField(
           controller: controller,
           validator:validator ,
-
+          autovalidateMode: AutovalidateMode.onUserInteraction,
           obscureText: obscureText,
           decoration: InputDecoration(
-
             hintText: hintText,
             filled: true,
             fillColor: Colors.white,
@@ -47,8 +49,10 @@ class AuthTextField extends StatelessWidget {
               borderRadius: BorderRadius.circular(16),
               borderSide: BorderSide(color: Colors.blue[700]!, width: 2),
             ),
+            suffixIcon: suffixIcon
           ),
           style: const TextStyle(color: Colors.black87),
+
 
         ),
       ],
