@@ -10,18 +10,20 @@ class Product {
   String? imageCover;
   num? ratingsAverage;
   String? id;
+  num? sold;
 
   Product({
-   this.id,
-   this.images,
-   this.ratingsQuantity,
-   this.title,
-   this.slug,
-   this.description,
-   this.quantity,
-   this.price,
-   this.priceAfterDiscount,
-   this.imageCover,
-   this.ratingsAverage,
-});
+    this.id,
+    this.images,
+    this.ratingsQuantity,
+    this.title,
+    this.slug,
+    this.description,
+    this.quantity,
+    this.price,
+    this.priceAfterDiscount,
+    this.imageCover,
+    this.ratingsAverage,
+    this.sold,
+  });
 }

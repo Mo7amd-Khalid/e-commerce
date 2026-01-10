@@ -53,6 +53,7 @@ abstract class CommerceMapper {
       priceAfterDiscount: product.priceAfterDiscount,
       imageCover: product.imageCover,
       ratingsAverage: product.ratingsAverage,
+      sold: product.sold,
     );
   }
 }

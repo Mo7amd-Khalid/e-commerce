@@ -77,8 +77,29 @@ class _ProductDetailsState extends State<ProductDetails> {
                       ).horizontalPadding(3),
                   ],
                 ),
+                8.verticalSpace,
                 Row(
                   children: [
+                    Container(
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 6,
+                        horizontal: 10,
+                      ),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(100),
+                        border: Border.all(
+                          color: AppColors.blue.withAlpha(90),
+                          width: 1,
+                        ),
+                      ),
+                      child: Text(
+                        "${(widget.product.sold ?? 0).toString()} Sold",
+                        style: context.textStyle.bodySmall!.copyWith(
+                          color: AppColors.blue,
+                        ),
+                      ),
+                    ),
+                    5.horizontalSpace,
                     const Icon(Icons.star, color: Colors.yellow),
                     Text(
                       widget.product.ratingsAverage.toString(),
@@ -181,7 +202,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                                 state.isLoading
                                     ? SizedBox(
                                         height: context.heightSize * 0.03,
-                                        width: context.widthSize*0.07,
+                                        width: context.widthSize * 0.07,
                                         child: const CircularProgressIndicator(
                                           color: AppColors.white,
                                         ),
